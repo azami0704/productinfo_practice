@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+<!-- scrollspy -->
+<div data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+  <nav class="navbar navbar-expand-md backdrop-filter navbar-dark  h-md-nav fixed-top nav-main">
+    <div class="container-fluid">
+      <a class="nav-link fs-4 fw-bold color-main pe-4 py-2" href="#top">關於咖啡</a>
+      <button class="navbar-toggler h-nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item pe-3">
+          <a class="nav-link fs-4 fw-bold color-main py-2" href="#section2">咖啡壺種類</a>
+        </li>
+        <li class="nav-item pe-3">
+          <a class="nav-link fs-4 fw-bold color-main py-2" href="#section3">咖啡豆種類</a>
+        </li>
+        <li class="nav-item pe-3">
+          <a class="nav-link fs-4 fw-bold color-main py-2" href="#section4">常見問題</a>
+        </li>
+        <li class="nav-item pe-3">
+          <a class="nav-link fs-4 fw-bold color-main py-2" href="#section5">聯絡我們</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+  <div class="container h-nav" id="top"></div>
+  <div  class="about-coffee container-fluid p-0 section1 border-bottom border-1 border-color-main">
+    <div class="position-relative">
+      <div class="p-0">
+        <!-- carouse -->
+        <div id="carouselExampleFade" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="8000" data-bs-touch="false">
+          <div class="carousel-inner h-100">
+            <div class="carousel-item h-100 active">
+              <img src="./images/RE_AdobeStock_282179354.jpg" class="d-block w-100 h-100 obj-fit-cover" alt="...">
+              <p class="position-absolute">“Life is like a cup of coffee.<br>You never know what you're gonna drink.”</p>
+            </div>
+            <div class="carousel-item h-100">
+              <img src="./images/RE_AdobeStock_211522225.jpg" class="d-block w-100 h-100 obj-fit-cover" alt="...">
+              <p class="position-absolute">“Today’s good mood is sponsored by coffee.”</p>
+            </div>
+            <div class="carousel-item h-100">
+              <img src="./images/RE_AdobeStock_333079524.jpg" class="d-block w-100 h-100 obj-fit-cover"  alt="...">
+              <p class="position-absolute">“Some coffee, plus some thinking, equals some great ideas.”</p>
+            </div>
+          </div>
+        </div>
+        <!-- carouse END-->
+      </div>
+    </div>
+  </div>
+  <div class="coffee-pot-intro scroll-position">
+    <div id="section2" class="scroll-position-block-h w-100"></div>
+    <div class="container-fluid d-md-flex gap-y-1 backdrop-filter p-md-0">
+      <h2 class="title fw-bold flex-md-shrink-0 pt-md-3 p-3 write-mode-vlr text-main-light text-md-start text-center mb-0">咖啡壺介紹</h2>
+      <div class="row ps-md-0 pe-md-0 m-md-0">
+        <div class="col-xl-3 col-md-6 col-12 px-0">
+          <div class="card text-bg-dark border-0 text-start h-100">
+            <img src="./images/re-moka.jpg" class="card-img h-100 obj-fit-cover obj-position-top" alt="摩卡壺">
+            <div class="card-img-overlay d-flex flex-column justify-content-end text-shadow-black bg-liner-black">
+              <h5 class="card-title fw-bold">摩卡壺
+                <br><span class="fs-6 fw-normal">Moka pot</span>
+              </h5>
+              <p class="card-text">又稱蒸氣沖煮式咖啡壺，是一種利用水沸騰時產生的壓力來幫助烹煮咖啡之工具，最早起源於義大利，由Luigi De Ponti與阿方索·拜爾拉提（Alfonso Bialetti）在1933年發明。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 col-12 px-0">
+          <div class="card text-bg-dark border-0 text-start h-100">
+            <img src="./images/600ml-Classic-Cold-Brew-Coffee-Ice-Coffee-Maker-Espresso-Coffee-Drip-Pot.jpg" class="card-img h-100 obj-fit-cover" alt="冰滴咖啡壺">
+            <div class="card-img-overlay d-flex flex-column justify-content-end text-shadow-black bg-liner-black">
+              <h5 class="card-title fw-bold">冰滴咖啡壺
+                <br><span class="fs-6 fw-normal">Ice Drip coffee</span>
+              </h5>
+              <p class="card-text">發明於荷蘭，又稱荷蘭式冰咖啡滴濾器，3-4層的玻璃容器架在木座上。利用冰塊自然融化成冰水，一滴一滴滴入咖啡粉中來萃取咖啡，這個過程十分緩慢，往往要進行數小時之久，因此冰滴式咖啡的價格較為昂貴，但口感極佳。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 col-12 px-0">
+          <div class="card text-bg-dark border-0 text-start h-100">
+            <img src="./images/re-fp.jpg" class="card-img h-100 obj-fit-cover" alt="法式濾壓壺">
+            <div class="card-img-overlay d-flex flex-column justify-content-end text-shadow-black bg-liner-black">
+              <h5 class="card-title fw-bold">法式濾壓壺
+                <br><span class="fs-6 fw-normal">French press</span>
+              </h5>
+              <p class="card-text">由玻璃杯和金屬濾網組成的咖啡烹煮工具。使用時，把研磨好的咖啡粉末放入壺內，再注入熱水，然後將帶有濾網的蓋子蓋上，靜置片刻後，便可慢慢按下手柄，咖啡粉末會被濾網推向咖啡壺的底部，之後便可以倒出咖啡。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6 col-12 px-0">
+          <div class="card text-bg-dark border-0 text-start h-100">
+            <img src="./images/siphon.jpg" class="card-img h-100 obj-fit-cover" alt="虹吸式咖啡壺">
+            <div class="card-img-overlay d-flex flex-column justify-content-end text-shadow-black bg-liner-black">
+              <h5 class="card-title fw-bold">虹吸式咖啡壺
+                <br><span class="fs-6 fw-normal">Siphon/Syphon</span>
+              </h5>
+              <p class="card-text">最早起源於德國。其藉由加熱下壺氣體，增加壓力，虹吸將水推至上壺萃取咖啡。虹吸壺在日本與台灣是很流行的咖啡沖調方法，但是手沖式咖啡興起後虹吸壺比較不具備沖煮咖啡器具的必需性。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  </div>
+  </div>
+  <div class="coffee-intro scroll-position h-45vh">
+    <div id="section3" class="scroll-position-block-h w-100"></div>
+    <div class="container-fluid text-white px-0 h-100">
+      <div id="carouselExampleIndicators2" class="carousel slide h-100" data-bs-ride="carousel" data-bs-pause="hover" data-bs-interval="5000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner position-relative h-100">
+          <div class="carousel-item h-100 active">
+            <img src="./images/AdobeStock_314188188.jpeg" class="d-block w-100 h-100 obj-fit-cover" alt="Coffea arabica">
+            <div class="card position-absolute border-0">
+              <div class="card-body color-main p-5">
+                <h5 class="card-title fw-bold fs-1">小果咖啡<span class="fs-6">Coffea arabica</span></h5>
+                <p class="card-text fs-5">亦稱阿拉伯咖啡、阿拉比卡咖啡，為茜草科（Rubiaceae）咖啡屬的一個物種，是最傳統的咖啡品種。原產於東非，在西元15世紀以前，咖啡長期被阿拉伯世界所壟斷，因此被歐洲人稱為「阿拉伯咖啡」。</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item h-100">
+            <img src="./images/AdobeStock_327762555.jpeg" class="d-block w-100 h-100 obj-fit-cover" alt="Coffea canephora">
+            <div class="card position-absolute border-0">
+              <div class="card-body color-main p-5">
+                <h5 class="card-title fw-bold fs-1">中果咖啡<span class="fs-6">Coffea canephora</span></h5>
+                <p class="card-text fs-5">中果咖啡的漿果較小果咖啡大但比大果咖啡小，比小果咖啡抗病害能力強。含咖啡因濃度高，約為2%-4%，但入口有苦、燒橡膠味，主要在印度尼西亞、印度、烏干達及越南等一些熱帶國家種植，大部分作為即溶咖啡之用。</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item h-100">
+            <img src="./images/AdobeStock_407240831.jpeg" class="d-block w-100 h-100 obj-fit-cover" alt="Typica">
+            <div class="card position-absolute border-0">
+              <div class="card-body color-main p-4">
+                <h5 class="card-title fw-bold fs-1">鐵皮卡<span class="fs-6">Typica</span></h5>
+                <p class="card-text fs-5">鐵皮卡是阿拉比卡底下最古老的品種之一，豆型呈現長瘦橢圓形，本身的香氣和酸味表現都很不錯，不少人認為它帶有像是檸檬一般的酸味，以及回甘的餘韻，整體風味非常平衡，例如有名的牙買加藍山、蘇門答臘曼特寧等咖啡豆都屬於鐵皮卡。</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item h-100">
+            <img src="./images/AdobeStock_307554080.jpeg" class="d-block w-100 h-100 obj-fit-cover" alt="Bourbon">
+            <div class="card position-absolute border-0">
+              <div class="card-body color-main p-4">
+                <h5 class="card-title fw-bold fs-1">波旁<span class="fs-6">Bourbon</span></h5>
+                <p class="card-text fs-5">波旁是自然變異的品種，也算是很古老的咖啡品種之一，底下還可以分為好幾百個變種，但最長聽到的是紅波旁、黃波旁、橘波旁和更稀有的粉紅波旁等，一般來說波旁咖啡的酸香味比較厚實、甜度也較高，還帶有一股明顯的奶味或堅果味。</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item h-100">
+            <img src="./images/AdobeStock_314398750.jpeg" class="d-block w-100 h-100 obj-fit-cover" alt="Geisha">
+            <div class="card position-absolute border-0">
+              <div class="card-body color-main p-4">
+                <h5 class="card-title fw-bold fs-1">藝妓／瑰夏<span class="fs-6">Geisha</span></h5>
+                <p class="card-text fs-5">藝妓咖啡也叫做瑰夏，因為英文名稱 Geisha 音似日文的藝妓而得名。藝妓也是鐵皮卡的衍生品種之一，帶有細緻的茉莉花、橙花、甚至是水果和一點茶的香氣，風味非常獨特，也因此市面上價格比較高，目前最知名的產地位於巴拿馬，是許多咖啡大賽中的常勝軍。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="faq scroll-position">
+    <div id="section4" class="scroll-position-block-h w-100"></div>
+    <div class="container-fluid backdrop-filter text-white">
+      <div class="container-lg pt-5">
+        <h2 class="text-center text-main-light fw-bold mb-4">常見問題</h2>
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                咖啡豆要多新鮮才好？
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <p>剛出爐的咖啡豆雖然新鮮但不適合沖煮，因為太過新鮮的咖啡豆內部還有很劇烈的變化，也會因為排氣旺盛造成萃取上的困難。除此之外，每一位烘豆師都有自家的烘焙方法，不同的咖啡豆養豆時間不同。依據我個人的經驗與喜好，咖啡豆出爐後的兩到三週會是最好的賞味期，但也有一些店家的豆子要放一個月才會達到風味高峰。因此，只能依靠自己的品嚐經驗來判斷。</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                可以不買手沖壺嗎？
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+              <div class="accordion-body">
+                <p>如果你拿茶壺倒出來的水很穩的話，不用手沖壺也可以，我自己就會使用一把3L的水壺沖煮手沖咖啡。不過奉勸新手在初期盡量使用一款順手的手沖壺，它可以幫助你克服手沖時遇到的各種困難——手沖咖啡有太多變數，一把順手的手沖壺可以減少變數，讓你事半功倍。</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                要怎麼判斷沖煮使用的水溫？
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+              <div class="accordion-body">
+                <p>入門版的答案是淺烘焙的咖啡豆用92℃的高溫水沖煮，深烘焙的咖啡豆用86℃的低溫水沖煮。原因是淺烘焙咖啡豆的密度比較高，高揮發性的芳香物質較多，利用高溫可以把這些物質萃取到咖啡中。而深烘焙咖啡豆的結構比較鬆散，高溫沖煮很容易造成過度萃取，所以應使用低溫的水。高階版的答案是任何溫度都可以，基本上只要控制好研磨度、溫度、時間三者的關係，其實沖煮用水高溫或低溫都不是問題。</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+              <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                為什麼咖啡嘗起來很酸？
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+              <div class="accordion-body">
+                <p>如果咖啡嘗起來很酸，第一種可能，使用的豆子以酸為主調性，或者你本身其實不嗜酸，若是因為這個原因，更換咖啡豆是最有效的方法。第二種可能，你能夠接受果酸，而且這款咖啡別人煮出來也沒那麼酸，那多半是因為你的咖啡萃取不足，造成咖啡的整體口味不平衡，導致你喝起來覺得特別酸。這種情況解決的方式就是利用“溫度”“研磨度”“時間”三個變因去調整萃取率。第三種可能，沖煮用水的水質造成這杯咖啡特別酸，如果你調來調去咖啡還是很酸，但是別人沖煮都沒有這個問題，你可以到超市買瓶礦泉水再煮一次，可能是你家的水質造成了酸味明顯的結果。</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFifth">
+              <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFifth" aria-expanded="false" aria-controls="panelsStayOpen-collapseFifth">
+                為什麼咖啡嘗起來很苦？
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFifth" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFifth">
+              <div class="accordion-body">
+                <p>先問自己有沒有買對口味合適的豆子，再來考慮調整沖煮。造成咖啡苦的大部分原因是萃取過度，可以通過“溫度”“研磨度”“時間”三個變因去調整萃取率。苦味也可能跟水質有關，如果你怎麼煮還是沒有改善，換種水試試看。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact scroll-position">
+    <div id="section5" class="scroll-position-block-h w-100"></div>
+    <div class="container-fluid">
+      <h2 class="text-center text-main-light mb-4">聯絡我們</h2>
+      <div class="container-lg">
+      <div class="text-white row">
+        <div class="col-md-6 col-12 px-md-5 px-4">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14458.814597305804!2d121.4195156!3d25.0441293!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1667963530829!5m2!1szh-TW!2stw" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-100 h-100"></iframe>
+        </div>
+        <address class="col-md-6 col-12 mb-0">
+          <ul class="contact-list list-unstyled fw-bold text-center text-md-start ps-md-3">
+            <li><a href="tel:0912345678" class="text-main-light text-decoration-none fs-5">Tel：0912-345-678</a></li>
+            <li><a href="mailto:XXX@gmail.com" class="text-main-light text-decoration-none fs-5">mail：XXX@gmail.com</a></li>
+            <li><a href="mailto:XXX@gmail.com" class="text-main-light text-decoration-none fs-5">address：243新北市泰山區貴子里致遠新村55之1號</a></li>
+            <li class="mt-3">
+              <a href="#" class="d-inline-block me-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+              </a>
+              <a href="#" class="d-inline-block me-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 24h-14c-2.761 0-5-2.239-5-5v-14c0-2.761 2.239-5 5-5h14c2.762 0 5 2.239 5 5v14c0 2.761-2.238 5-5 5zm1-12.508c0-3.58-3.589-6.492-8-6.492s-8 2.912-8 6.492c0 3.209 2.846 5.897 6.691 6.405.26.056.615.172.704.395.081.202.053.519.026.723l-.114.685c-.035.202-.161.791.693.431.854-.36 4.607-2.713 6.286-4.645h-.001c1.16-1.271 1.715-2.561 1.715-3.994zm-10.978 2.067h-2.242l-.108-.043v-.001l-.001-.001-.003-.003-.044-.107v-3.486c0-.086.07-.156.156-.156h.562c.085 0 .155.07.155.156v2.768h1.525c.086 0 .155.07.155.156v.561c0 .086-.069.156-.155.156zm8.314 0h-2.242l-.108-.043-.004-.005-.044-.107v-3.486l.044-.107.004-.005.108-.044h2.242c.086 0 .155.07.155.156v.561c0 .086-.069.156-.155.156h-1.525v.589h1.525c.086 0 .155.07.155.156v.561c0 .086-.069.156-.155.156h-1.525v.589h1.525c.086 0 .155.07.155.156v.561c0 .086-.069.156-.155.156zm-6.961 0h-.562c-.086 0-.156-.069-.156-.155v-3.486c0-.086.07-.156.156-.156h.562c.086 0 .155.07.155.156v3.486c0 .085-.069.155-.155.155zm1.418 0h-.561c-.086 0-.156-.069-.156-.155v-3.486c0-.086.07-.156.156-.156h.561l.013.001.015.002.009.002.015.004.005.002.014.006.013.008.008.005.012.01.003.003.01.011.013.015 1.597 2.158v-2.071c0-.086.07-.156.156-.156h.561c.086 0 .156.07.156.156v3.486c0 .085-.07.155-.156.155h-.561l-.04-.005-.002-.001-.016-.005-.007-.003-.012-.006-.01-.006-.001-.001-.04-.039-1.599-2.16v2.071c0 .085-.07.155-.156.155z"/></svg>
+              </a>
+              <a href="#" class="d-inline-block me-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.233 5.488c-.843-.038-1.097-.046-3.233-.046s-2.389.008-3.232.046c-2.17.099-3.181 1.127-3.279 3.279-.039.844-.048 1.097-.048 3.233s.009 2.389.047 3.233c.099 2.148 1.106 3.18 3.279 3.279.843.038 1.097.047 3.233.047 2.137 0 2.39-.008 3.233-.046 2.17-.099 3.18-1.129 3.279-3.279.038-.844.046-1.097.046-3.233s-.008-2.389-.046-3.232c-.099-2.153-1.111-3.182-3.279-3.281zm-3.233 10.62c-2.269 0-4.108-1.839-4.108-4.108 0-2.269 1.84-4.108 4.108-4.108s4.108 1.839 4.108 4.108c0 2.269-1.839 4.108-4.108 4.108zm4.271-7.418c-.53 0-.96-.43-.96-.96s.43-.96.96-.96.96.43.96.96-.43.96-.96.96zm-1.604 3.31c0 1.473-1.194 2.667-2.667 2.667s-2.667-1.194-2.667-2.667c0-1.473 1.194-2.667 2.667-2.667s2.667 1.194 2.667 2.667zm4.333-12h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm.952 15.298c-.132 2.909-1.751 4.521-4.653 4.654-.854.039-1.126.048-3.299.048s-2.444-.009-3.298-.048c-2.908-.133-4.52-1.748-4.654-4.654-.039-.853-.048-1.125-.048-3.298 0-2.172.009-2.445.048-3.298.134-2.908 1.748-4.521 4.654-4.653.854-.04 1.125-.049 3.298-.049s2.445.009 3.299.048c2.908.133 4.523 1.751 4.653 4.653.039.854.048 1.127.048 3.299 0 2.173-.009 2.445-.048 3.298z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </address>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="text-center">
+  僅為練習作品，不做商業使用
+</footer>  
+  </div>
+<!-- scrollspy END-->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+        <script src="all.js"></script>
+</body>
+
+</html>

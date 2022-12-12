@@ -1,0 +1,293 @@
+:root {
+    --color-main:rgb(65, 27, 20);
+    --color-main-active:rgb(191, 98, 44);
+    --color-main-light:rgb(242, 230, 207);
+    --color-yellow:rgb(242, 211, 119);
+    --color-orange-light:rgb(191, 129, 94);
+    --color-brown-light:rgb(89, 68, 49);
+    --color-orange:rgb(191, 98, 44);
+    --white-opacity:rgba(255,255,255,.5);
+    --white-opacity-8:rgba(255,255,255,.8);
+    --black-opacity:rgba(0,0,0,.8);
+    --black-opacity-5:rgba(0,0,0,.5);
+    --black-opacity-2:rgba(0,0,0,.2);
+    --white:rgb(255,255,255);
+    --black:rgb(0,0,0);
+    --gray:rgb(204, 204, 204);
+    --nav-height:max(7vh,50px);
+    --mid-height:80vh;
+    --spacer-1:1rem;
+    --bs-navbar-toggler-icon-bg-main:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2889, 68, 49, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+body {
+    background: url(./images/re-AdobeStock_277515109.jpg)repeat center center;
+    background-position: cover;
+    background-attachment: fixed;
+    color: var(--color-main);
+}
+
+.color-main {
+    color: var(--color-main);
+}
+.h-nav {
+    height: var(--nav-height);
+}
+.navbar-toggler.h-nav {
+    height: calc(var(--nav-height) - 1rem);
+}
+.h-45vh {
+    height: var(--mid-height);
+    padding-bottom: var(--nav-height);
+}
+.scroll-position-block-h {
+    height: var(--nav-height);
+}
+
+.scroll-position {
+    margin-top: calc(var(--nav-height) * -1);
+}
+
+
+.mt-nav {
+    margin-top: var(--nav-height);;
+}
+.bg-white-opacity {
+    background-color: var(--white-opacity);
+}
+.bg-color-main-light {
+    background-color: var(--color-main-light);
+}
+.bg-black-opacity {
+    background-color: var(--black-opacity);
+}
+.backdrop-filter {
+    backdrop-filter: blur(5px);
+}
+
+.bg-liner-black {
+    background-image: linear-gradient(transparent 50% , var(--black-opacity-5)100%);
+}
+
+.border-color-main {
+    border-color: var(--color-main)!important;
+}
+.border-color-light {
+    border-color: var(--color-main-light)!important;
+}
+
+
+.nav-main {
+    background-color: var(--white-opacity);
+
+}
+.text-main-light {
+    color: var(--color-main-light);
+}
+
+.box-shadow {
+    box-shadow: 0 2px 10px 0 var(--black-opacity-5);
+}
+
+.text-shadow {
+    text-shadow: 0 0 3px var(--color-main-light);
+}
+.text-shadow-black {
+    text-shadow: 0 0 3px var(--black);
+}
+
+.obj-fit-cover {
+    object-fit: cover;
+}
+
+.nav-main .nav-link:hover,
+.nav-main .nav-link.active {
+    text-shadow: 0 0 3px var(--color-main-light);
+    color: var(--color-main-active);
+}
+
+.coffee-pot-intro .card,
+.coffee-pot-intro .card-img-overlay,
+.coffee-pot-intro .card img {
+    border-radius: 0;
+}
+
+.gap-y-1 {
+    row-gap: var(--spacer-1);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 5%;
+}
+
+.coffee-intro .card {
+    width: 32em;
+    top: 5vw;
+    right: 20vw;
+    background-color: var(--white-opacity-8);
+    box-shadow: 0 3px 5px 3px var(--black-opacity-2);
+}
+
+.coffee-intro .carousel-inner .carousel-item:nth-child(even) .card {
+    left: 20vw;
+}
+
+footer {
+    background-color: var(--color-main-light);;
+}
+
+@media (max-width:992px) {
+    .coffee-intro .carousel-inner .carousel-item:nth-child(even) .card {
+        left: 50%;
+    }
+
+    .coffee-intro .card {
+        top: 50%;
+        left: 50%;
+        right: 0;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+
+
+.faq .accordion-button {
+    color: var(--color-main);
+}
+
+.faq .accordion-button:not(.collapsed) {
+    color: var(--color-main-light);
+    background-color: var(--color-orange-light);
+    font-weight: 700;
+}
+
+.faq .container-lg {
+    padding-bottom: 10vh;
+}
+
+.faq .accordion-item {
+    border-width: 0 0 1px 0;
+}
+
+.faq .accordion-button:focus {
+    border-color:  var(--color-main-light);
+    box-shadow: 0 0 0 0.25rem rgba(253, 101, 13, 0);;
+}
+
+.faq .accordion-button::after {
+    color: var(--color-main-light);
+}
+
+.accordion {
+    --bs-accordion-btn-active-icon:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f2e6ce'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.about-coffee {
+    max-height: calc(100vh - var(--nav-height));
+    overflow: hidden;
+}
+
+.about-coffee .carousel-item.active img{
+    object-fit: contain;
+    object-position: 50% bottom;
+    animation: sca 9s linear .01s backwards;
+}
+
+@keyframes sca {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+.about-coffee .carousel-item p {
+    font-family: 'Caveat', cursive;
+    top: 18%;
+    left: 5%;
+    right: 5%;
+    text-shadow: 0 0 5px var(--black-opacity-5);
+    font-size: min(10vw,48px);
+    color: var(--color-main-light);
+}
+
+.contact .container-fluid {
+    background: linear-gradient(45deg,transparent 30% , var(--black-opacity)100%),
+    url(./images/AdobeStock_287266798.jpeg)no-repeat right 50%;
+    background-size: cover;
+}
+
+.contact-list {
+    line-height: 2.5;
+}
+
+.contact .container-fluid{
+    padding: 48px 0 10vh 0;
+}
+
+.contact-list a:hover,
+.contact-list a svg:hover {
+    color: currentColor;
+    fill: currentColor;
+}
+
+.contact-list a svg {
+    width: 50px;
+    height: 50px;
+    fill: var(--color-main-light);
+}
+
+.navbar-toggler-icon {
+    background-image: var(--bs-navbar-toggler-icon-bg-main);
+}
+
+@media (min-width:768px){
+    .write-mode-vlr {
+        writing-mode: vertical-lr;
+    }
+    .coffee-pot-intro .row > * {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .contact address {
+        border-left: 2px solid var(--color-main-light);
+    }
+    .h-md-nav {
+        height: var(--nav-height);
+    }
+}
+
+@media (max-width:767px) {
+    .coffee-intro .card {
+        width: 90%;
+    }
+    .coffee-pot-intro .title {
+        padding-top: 5vw !important;
+    }
+    .coffee-pot-intro .col-12{
+        height: max(40vh,300px);
+        overflow: hidden;
+    }
+
+    .obj-position-top {
+        object-position: top;
+    }
+    /* .about-coffee .col-md-7{
+        color: var(--white);
+        background-color: transparent;
+        backdrop-filter: blur(2px);
+        text-shadow: 0 2px 3px var(--black);
+    }
+    .about-coffee .col-md-5 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: -1;
+    } */
+    .contact iframe {
+        height: 40vh !important;
+    }
+}
+
