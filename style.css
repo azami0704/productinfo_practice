@@ -242,6 +242,11 @@ footer {
     background-image: var(--bs-navbar-toggler-icon-bg-main);
 }
 
+.modal-body {
+    height: 80vh;
+    overflow: auto;
+}
+
 @media (min-width:768px){
     .write-mode-vlr {
         writing-mode: vertical-lr;
