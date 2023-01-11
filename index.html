@@ -38,9 +38,9 @@
         </li>
       </ul>
     </div>
-    <button type="button" data-bs-toggle="modal" data-bs-target="#searchModal" id="search-btn">附近咖啡廳</button>
-    </div>
-  </nav>
+  </div>
+</nav>
+<button type="button" data-bs-toggle="modal" data-bs-target="#searchModal" id="search-btn" class="position-fixed">找咖啡廳</button>
   <div class="container h-nav" id="top"></div>
   <div  class="about-coffee container-fluid p-0 section1 border-bottom border-1 border-color-main">
     <div class="position-relative">
@@ -297,11 +297,15 @@
     <div class="modal-dialog modal-lg modal-fullscreen-sm-down">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="searchModalLabel">附近咖啡廳</h1>
+          <h1 class="modal-title fs-5" id="searchModalLabel">搜尋咖啡廳</h1>
+          <small class="ms-3"><a href="https://cafenomad.tw/developers/docs/v1.2" class="text-muted">API by Cafe Nomad</a></small>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <ul class="cafe-list">
+          以地區搜尋: <select name="cafe-area" id="cafe-area">
+            <option selected disabled>--請選擇地區--</option>
+          </select>
+          <ul class="cafe-list list-group list-group-flush">
             <div class="text-center">
               <div class="spinner-border" role="status">
                 <span class="visually-hidden">Loading...</span>
