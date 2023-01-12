@@ -244,6 +244,10 @@ footer {
     fill: currentColor;
 }
 
+svg {
+    fill: currentColor;
+}
+
 .list-group-item div + div {
     padding-left: 1rem;
 }
@@ -267,11 +271,16 @@ footer {
 }
 
 #search-btn {
-    border-radius: 30px 30px 0 30px;
-    aspect-ratio: 1;
-    top: 80%;
-    right: 1%;
+    color: var(--color-main-light);
+    top: 85%;
+    right: 1vw;
+    width: max(50px,5vw);
     z-index: 120;
+}
+
+#search-btn svg {
+    -webkit-filter: drop-shadow(0 0 2px var(--black-opacity));
+    filter:drop-shadow(0 0 2px var(--black-opacity));
 }
 
 @media (min-width:768px){
