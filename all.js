@@ -124,7 +124,7 @@ function renderStoreList(data,...arg){
             </g>
             </svg><span class='fw-bold c'>${item.name}</span></div>
             <div>${item.address}</div>
-            <div>營業時間: ${item.open_time?item.open_time:'未提供'}</div>
+            <div>營業時間: ${item.open_time||'未提供'}</div>
             <div>插座: ${haveSocket}</div>
             <div>價格便宜: ${cheap}</div>
             <div>咖啡好喝: ${tasty}</div>
@@ -195,7 +195,7 @@ function renderStoreList(data,...arg){
             </g>
             </svg><span class='fw-bold c'>${filterClose[item.idx].name}</span></div>
             <div>${filterClose[item.idx].address}</div>
-            <div>營業時間: ${filterClose[item.idx].open_time?filterClose[item.idx].open_time:'未提供'}</div>
+            <div>營業時間: ${filterClose[item.idx].open_time||'未提供'}</div>
             <div>插座: ${haveSocket}</div>
             <div>價格便宜: ${cheap}</div>
             <div>咖啡好喝: ${tasty}</div>
