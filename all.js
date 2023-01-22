@@ -1,9 +1,9 @@
 const navbar = document.querySelector('.navbar');
 const navbarToggle = document.querySelector('.navbar-toggler');
 const navbarCollapse = document.querySelector('.navbar-collapse');
-navbar.addEventListener('click',function (e) {
-    if(e.target.classList.contains('nav-link')){
-        if(!navbarToggle.classList.contains('collapsed')){
+navbar.addEventListener('click', function (e) {
+    if (e.target.classList.contains('nav-link')) {
+        if (!navbarToggle.classList.contains('collapsed')) {
             navbarToggle.classList.remove('collapsed');
             navbarCollapse.classList.remove('show');
         }
@@ -13,99 +13,116 @@ navbar.addEventListener('click',function (e) {
 const searchBtn = document.getElementById('search-btn');
 const cafeList = document.querySelector('.cafe-list');
 const cafeArea = document.getElementById('cafe-area');
-searchBtn.addEventListener('click',()=>{
-    cafeArea[0].selected=true;
+//打開搜尋視窗時重置select及預設店家
+searchBtn.addEventListener('click', () => {
+    cafeArea[0].selected = true;
     searchCafe();
 })
-cafeArea.addEventListener('change',function(){
+//選擇地區時撈該地區的資料
+cafeArea.addEventListener('change', function () {
     axios.get('./cafe.json')
-    .then(res=>{
-        let selectedAreaList = res.data.filter(item=>item.city==this.value)
-        renderStoreList(selectedAreaList,'area');
-    })
-    .catch(err=>{
-        console.log(err);
-    })
+        .then(res => {
+            let selectedAreaList = res.data.filter(item => item.city == this.value)
+            renderStoreList(selectedAreaList, 'area');
+        })
+        .catch(err => {
+            console.log(err);
+        })
 })
 //在function裡宣告吃不到,改在外面宣告
+//以下為泰山職訓所的經緯度.為了方便顯示抓距離的差別,將預設經緯度移除
 // let userLatitude=25.04411411;
 // let userLongitude=121.41965105;
-let userLatitude='';
-let userLongitude='';
-let str='';
-let filterClose=[];
-let positionList=[];
-function searchCafe(){
+let userLatitude = '';
+let userLongitude = '';
+let str = '';
+let filterClose = [];
+let positionList = [];
+function searchCafe() {
     //初始座標泰山職訓所
-    navigator.geolocation.getCurrentPosition(function(position) {
+    navigator.geolocation.getCurrentPosition(function (position) {
         //有取到座標就更新取得的用戶座標
-        userLatitude=position.coords.latitude;
-        userLongitude=position.coords.longitude;
+        userLatitude = position.coords.latitude;
+        userLongitude = position.coords.longitude;
         axios.get('./cafe.json')
-        .then(res=>{
-            renderStoreList(res.data);
-        })
-        .catch(err=>{
-            console.log(err);
-        })
-    },function(){
+            .then(res => {
+                renderStoreList(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, function () {
         //沒取到座標就直接用預設座標搜尋
         axios.get('./cafe.json')
-        .then(res=>{
-            renderStoreList(res.data);
-        })
-        .catch(err=>{
-            console.log(err);
-        })
+            .then(res => {
+                renderStoreList(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     });
 }
 
+//Haversine function
+const rad=x=>x*Math.PI/180;
+const distHaversine = function(p1,p2) {
+    const R=6371; //地球圓周km
+    const dLat=rad(p2.lat-p1.lat);
+    const dLon=rad(p2.lon-p1.lon);
+    let a=Math.sin(dLat/2)*Math.sin(dLat/2)+
+    Math.cos(rad(p1.lat))*Math.cos(rad(p2.lat))*
+    Math.sin(dLon/2)*Math.sin(dLon/2);
+    let c=2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+    let d=R*c;
+    return d;
+}
+
 //渲染店家清單
-function renderStoreList(data,...arg){
-    str='';
-    cafeList.innerHTML=`<div class="text-center">
+function renderStoreList(data, ...arg) {
+    str = '';
+    cafeList.innerHTML = `<div class="text-center">
     <div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
     </div>
     </div>`;
-    if(arg[0]=='area'){
-         //發現部份資料不完整,篩出資料完整的
-         positionList=data.filter(item=>item.open_time!='永久停業'&&item.name!=''&&item.address!='');
-         positionList.forEach(item=>{
-            let fb='';
-            if(item.url){
-                fb=`<a href='${item.url}' target='_blank'>官網</a>`
-            }else{
-                fb='';
+    if (arg[0] == 'area') {
+        //發現部份資料不完整,篩出資料完整的
+        positionList = data.filter(item => item.open_time != '永久停業' && item.name != '' && item.address != '');
+        positionList.forEach(item => {
+            let fb = '';
+            if (item.url) {
+                fb = `<a href='${item.url}' target='_blank'>官網</a>`
+            } else {
+                fb = '';
             }
-            let haveSocket='';
+            let haveSocket = '';
             switch (item.socket) {
                 case "no":
-                    haveSocket='很少';
-                break;
+                    haveSocket = '很少';
+                    break;
                 case "yes":
-                    haveSocket='很多';
-                break;
+                    haveSocket = '很多';
+                    break;
                 case "maybe":
-                    haveSocket='還好，看座位';
-                break;
+                    haveSocket = '還好，看座位';
+                    break;
                 default:
-                    haveSocket='未提供';
-                break;
+                    haveSocket = '未提供';
+                    break;
             }
-            let cheap='';
-            if(item.cheap){
-                cheap=`<span class='range' style='--lv:${item.cheap*2*10}%'></span>`;
-            }else{
-                cheap='未提供';
+            let cheap = '';
+            if (item.cheap) {
+                cheap = `<span class='range' style='--lv:${item.cheap * 2 * 10}%'></span>`;
+            } else {
+                cheap = '未提供';
             }
-            let tasty='';
-            if(item.tasty){
-                tasty=`<span class='range' style='--lv:${item.tasty*2*10}%'></span>`;
-            }else{
-                tasty='未提供';
+            let tasty = '';
+            if (item.tasty) {
+                tasty = `<span class='range' style='--lv:${item.tasty * 2 * 10}%'></span>`;
+            } else {
+                tasty = '未提供';
             }
-            str+=`<li class='list-group-item'>
+            str += `<li class='list-group-item'>
             <div class='color-main'><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 120 120" xml:space="preserve">
             <g>
                 <g>
@@ -124,59 +141,61 @@ function renderStoreList(data,...arg){
             </g>
             </svg><span class='fw-bold c'>${item.name}</span></div>
             <div>${item.address}</div>
-            <div>營業時間: ${item.open_time||'未提供'}</div>
+            <div>營業時間: ${item.open_time || '未提供'}</div>
             <div>插座: ${haveSocket}</div>
             <div>價格便宜: ${cheap}</div>
             <div>咖啡好喝: ${tasty}</div>
             <div>${fb}</div>
             </li>`;
         })
-    }else{
-        positionList=[];
+    } else {
+        positionList = [];
         //發現部份資料不完整,篩出資料完整的
-        filterClose=data.filter(item=>item.open_time!='永久停業'&&item.name!=''&&item.address!='');
+        filterClose = data.filter(item => item.open_time != '永久停業' && item.name != '' && item.address != '');
         //將索引值&店家座標與用戶座標相減存入陣列以便搜尋
-        filterClose.forEach((item,idx)=>{
-            positionList.push({idx:idx,value:Math.abs(userLatitude-item.latitude)+Math.abs(userLongitude-item.longitude)});
-            
+        filterClose.forEach((item, idx) => {
+            positionList.push({ 
+                idx: idx, 
+                value:distHaversine({lat:userLatitude,lon:userLongitude},{lat:item.latitude,lon:item.longitude}) 
+            });
         })
         //將相減的數字排序並取出最近的10筆
-        positionList=positionList.sort((a, b) => a.value - b.value).slice(0, 10);
-        positionList.forEach(item=>{
-            let fb='';
-            if(filterClose[item.idx].url){
-                fb=`<a href='${filterClose[item.idx].url}' target='_blank'>官網</a>`
-            }else{
-                fb='';
+        positionList = positionList.sort((a, b) => a.value - b.value).slice(0, 10);
+        positionList.forEach(item => {
+            let fb = '';
+            if (filterClose[item.idx].url) {
+                fb = `<a href='${filterClose[item.idx].url}' target='_blank'>官網</a>`
+            } else {
+                fb = '';
             }
-            let haveSocket='';
+            let haveSocket = '';
             switch (filterClose[item.idx].socket) {
                 case "no":
-                    haveSocket='很少';
-                break;
+                    haveSocket = '很少';
+                    break;
                 case "yes":
-                    haveSocket='很多';
-                break;
+                    haveSocket = '很多';
+                    break;
                 case "maybe":
-                    haveSocket='還好，看座位';
-                break;
+                    haveSocket = '還好，看座位';
+                    break;
                 default:
-                    haveSocket='未提供';
-                break;
+                    haveSocket = '未提供';
+                    break;
             }
-            let cheap='';
-            if(filterClose[item.idx].cheap){
-                cheap=`<span class='range' style='--lv:${filterClose[item.idx].cheap*2*10}%'></span>`;
-            }else{
-                cheap='未提供';
+            let cheap = '';
+            if (filterClose[item.idx].cheap) {
+                cheap = `<span class='range' style='--lv:${filterClose[item.idx].cheap * 2 * 10}%'></span>`;
+            } else {
+                cheap = '未提供';
             }
-            let tasty='';
-            if(filterClose[item.idx].tasty){
-                tasty=`<span class='range' style='--lv:${filterClose[item.idx].tasty*2*10}%'></span>`;
-            }else{
-                tasty='未提供';
+            let tasty = '';
+            if (filterClose[item.idx].tasty) {
+                tasty = `<span class='range' style='--lv:${filterClose[item.idx].tasty * 2 * 10}%'></span>`;
+            } else {
+                tasty = '未提供';
             }
-            str+=`<li class='list-group-item'>
+            str += `<li class='list-group-item'>
             <div class='color-main'><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 120 120" xml:space="preserve">
             <g>
                 <g>
@@ -195,7 +214,7 @@ function renderStoreList(data,...arg){
             </g>
             </svg><span class='fw-bold c'>${filterClose[item.idx].name}</span></div>
             <div>${filterClose[item.idx].address}</div>
-            <div>營業時間: ${filterClose[item.idx].open_time||'未提供'}</div>
+            <div>營業時間: ${filterClose[item.idx].open_time || '未提供'}</div>
             <div>插座: ${haveSocket}</div>
             <div>價格便宜: ${cheap}</div>
             <div>咖啡好喝: ${tasty}</div>
@@ -203,37 +222,36 @@ function renderStoreList(data,...arg){
             </li>`;
         })
     }
-    
-    cafeList.innerHTML=str;
+
+    cafeList.innerHTML = str;
 }
 
 
 //整理地區清單
-let areaList=new Set();
-let areaListArr=[];
+let areaList = new Set();
+let areaListArr = [];
 axios.get('./cafe.json')
-.then(res=>{
-    res.data.forEach(item=>areaList.add(item.city));
-    areaListArr = [...areaList];
-    renderAreaSelect(areaListArr);
-})
-.catch(err=>{
-    console.log(err);
-})
+    .then(res => {
+        res.data.forEach(item => areaList.add(item.city));
+        areaListArr = [...areaList];
+        renderAreaSelect(areaListArr);
+    })
+    .catch(err => {
+        console.log(err);
+    })
 
 //渲染地區select
-function renderAreaSelect(list){
-    let str='';
-    list.forEach(item=>{
-        let opt=document.createElement('option');
-        opt.setAttribute('value',item);
-        opt.textContent=translateArea(item);
+function renderAreaSelect(list) {
+    list.forEach(item => {
+        let opt = document.createElement('option');
+        opt.setAttribute('value', item);
+        opt.textContent = translateArea(item);
         cafeArea.appendChild(opt);
     })
 }
 
 //城市拼音轉換中文
-function translateArea(area){
+function translateArea(area) {
     switch (area) {
         case 'chiayi':
             return '嘉義';

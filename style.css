@@ -277,6 +277,9 @@ svg {
     width: max(50px,5vw);
     z-index: 120;
 }
+#search-btn:hover {
+    color: var(--white);
+}
 
 #search-btn svg {
     -webkit-filter: drop-shadow(0 0 2px var(--black-opacity));
