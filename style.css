@@ -214,7 +214,7 @@ footer {
 
 .contact .container-fluid {
     background: linear-gradient(45deg,transparent 30% , var(--black-opacity)100%),
-    url(./images/AdobeStock_287266798.jpeg)no-repeat right 50%;
+    url(./images/AdobeStock_287266798.jpg)no-repeat right 50%;
     background-size: cover;
 }
 
